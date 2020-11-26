@@ -25,4 +25,9 @@ class RepeatedCharacterValidatorTest {
     fun `test with password repeated digits`() {
         assertFalse(RepeatedCharacterValidator().isValid("123asd456fgh456"))
     }
+
+    @Test
+    fun `test with password empty`() {
+        assertFalse(RepeatedCharacterValidator().isValid(""))
+    }
 }

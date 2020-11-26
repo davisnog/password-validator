@@ -42,7 +42,7 @@ class SpecialCharacterValidatorTest {
     }
 
     @Test
-    fun `test password with special character asterisk valid`(){
+    fun `test password wialseth special character asterisk valid`(){
         assertTrue(SpecialCharacterValidator().isValid("asd34*fAh"))
     }
 
@@ -74,6 +74,11 @@ class SpecialCharacterValidatorTest {
     @Test
     fun `test password no special character`(){
         assertFalse(SpecialCharacterValidator().isValid("asd34pOqA"))
+    }
+
+    @Test
+    fun `test password has more on special character`(){
+        assertTrue(SpecialCharacterValidator().isValid("asd34pOqA%#"))
     }
 
 
