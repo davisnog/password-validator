@@ -5,8 +5,9 @@ import java.util.regex.Pattern
 
 class UppercaseValidator : Validator {
     companion object {
-        val partner = Pattern.compile("[A-Z]").toRegex()
+        private val partner = Pattern.compile("[A-Z]").toRegex()
     }
+
     override fun isValid(password: String): Boolean {
         return password.contains(partner)
     }
