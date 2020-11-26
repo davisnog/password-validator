@@ -86,3 +86,5 @@ local.properties
 buildSrcTmp/
 distTmp/
 outTmp/
+.idea/vcs.xml
+.idea/misc.xml
