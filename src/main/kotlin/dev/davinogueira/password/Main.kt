@@ -1,6 +1,10 @@
 package dev.davinogueira.password
-import dev.davinogueira.password.validators.impl.LengthValidator
+
+import io.micronaut.runtime.Micronaut.*
 
 fun main(args: Array<String>) {
-    println(LengthValidator().isValid("23423"))
+    build()
+            .args(*args)
+            .packages("dev.davinogueira.password")
+            .start()
 }
