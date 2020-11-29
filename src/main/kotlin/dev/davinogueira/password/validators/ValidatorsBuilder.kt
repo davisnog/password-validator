@@ -1,7 +1,9 @@
 package dev.davinogueira.password.validators
 
 import dev.davinogueira.password.validators.impl.*
+import io.micronaut.context.annotation.Prototype
 
+@Prototype
 class ValidatorsBuilder {
 
     fun password() : Password {

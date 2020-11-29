@@ -57,7 +57,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("dev.davinogueira.password.Main")
+    mainClass.set("dev.davinogueira.password.MainKt")
 }
 
 java {
