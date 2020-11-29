@@ -15,6 +15,7 @@ class ValidatorServiceImpl : ValidatorService {
             .addValidator(RepeatedCharacterValidator())
             .addValidator(SpecialCharacterValidator())
             .addValidator(UppercaseValidator())
+            .addValidator(WhitespaceCharacterValidator())
 
     }
 

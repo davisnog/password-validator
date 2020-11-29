@@ -26,5 +26,6 @@ class LengthValidatorTest {
     fun `test with white spaces`(){
         assertFalse(LengthValidator().isValid(" 1 2 3 4 5"))
         assertFalse(LengthValidator().isValid(" 1 2 3 4  "))
+        assertFalse(LengthValidator().isValid("123456789 "))
     }
 }
