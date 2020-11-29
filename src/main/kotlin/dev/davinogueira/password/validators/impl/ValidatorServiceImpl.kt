@@ -1,10 +1,11 @@
-package dev.davinogueira.password.validators
+package dev.davinogueira.password.validators.impl
 
-import dev.davinogueira.password.validators.impl.*
+import dev.davinogueira.password.validators.Password
+import dev.davinogueira.password.validators.ValidatorService
 import io.micronaut.context.annotation.Prototype
 
 @Prototype
-class ValidatorsBuilder {
+class ValidatorServiceImpl : ValidatorService {
 
     fun password() : Password {
         return Password()
@@ -15,6 +16,10 @@ class ValidatorsBuilder {
             .addValidator(SpecialCharacterValidator())
             .addValidator(UppercaseValidator())
 
+    }
+
+    override fun isValid(password: String): Boolean {
+        return password().isValid(password)
     }
 
 }

@@ -1,6 +1,6 @@
 package dev.davinogueira.password.controllers
 
-import dev.davinogueira.password.validators.ValidatorsBuilder
+import dev.davinogueira.password.validators.impl.ValidatorServiceImpl
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller
@@ -12,12 +12,11 @@ import javax.validation.Valid
 class PasswordValidatorController {
 
     @Inject
-    private lateinit var validatorsBuilder: ValidatorsBuilder
+    private lateinit var validatorService: ValidatorServiceImpl
 
 
     @Post("/validate")
     fun validate(@Body @Valid request: PasswordRequest) : HttpResponse<PasswordResponse>{
-        val paswd = validatorsBuilder.password()
-        return HttpResponse.ok(PasswordResponse(paswd.isValid(request.password)))
+        return HttpResponse.ok(PasswordResponse(validatorService.isValid(request.password)))
     }
 }

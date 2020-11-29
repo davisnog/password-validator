@@ -1,16 +1,14 @@
 package dev.davinogueira.password.validators.impl
 
-import dev.davinogueira.password.validators.Password
-import dev.davinogueira.password.validators.ValidatorsBuilder
 import org.junit.jupiter.api.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class ValidatorsBuilderTest {
+class ValidatorServiceImplTest {
 
     @Test
     fun `test password is invalid`(){
-        val pswd = ValidatorsBuilder().password()
+        val pswd = ValidatorServiceImpl().password()
 
         assertFalse(pswd.isValid(""))
         assertFalse(pswd.isValid("aa"))
@@ -23,7 +21,7 @@ class ValidatorsBuilderTest {
 
     @Test
     fun `test password is valid`() {
-        val pswd = ValidatorsBuilder().password()
+        val pswd = ValidatorServiceImpl().password()
 
         assertTrue(pswd.isValid("AbTp9!fok"))
     }
