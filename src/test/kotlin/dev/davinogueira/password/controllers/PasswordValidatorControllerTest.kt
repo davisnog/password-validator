@@ -28,11 +28,20 @@ class PasswordValidatorControllerTest {
 
     @Test
     fun `test with invalid password`() {
-        val client = HttpClient.create(server.url)
-        val request = HttpRequest.POST("/validate", PasswordRequest("DaviNogueira"))
-        val response = client.toBlocking().retrieve(request, PasswordResponse::class.java)
+        var response = create("DaviNogueira")
 
         assertNotNull(response)
         assertFalse(response.valid)
+
+        response = create("AbTp9!fok ")
+
+        assertNotNull(response)
+        assertFalse(response.valid)
+    }
+
+    private fun create(password: String) : PasswordResponse {
+        val client = HttpClient.create(server.url)
+        val request = HttpRequest.POST("/validate", PasswordRequest(password))
+        return client.toBlocking().retrieve(request, PasswordResponse::class.java)
     }
 }

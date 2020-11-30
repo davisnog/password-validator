@@ -17,7 +17,7 @@ class ValidatorServiceImplTest {
         assertFalse(pswd.isValid("AbTp9!foo"))
         assertFalse(pswd.isValid("AbTp9!foA"))
         assertFalse(pswd.isValid("AbTp9 fok"))
-        assertTrue(pswd.isValid("AbTp9!fok "))
+        assertFalse(pswd.isValid("AbTp9!fok "))
     }
 
     @Test
