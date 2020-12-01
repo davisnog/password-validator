@@ -1,0 +1,7 @@
+micronaut:
+  application:
+    name: passoword-validator-server
+
+grpc:
+    server:
+        port: 8080
