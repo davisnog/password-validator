@@ -1,8 +1,18 @@
 micronaut:
   application:
-    name: passoword-validator-client
+    name: password-validator-client
+  server: 
+    port: -1
 
 grpc:
   client:
     plaintext: true
     max-retry-attempts: 10
+    discovery:
+      enabled: true
+
+consul:
+  client:
+    registration:
+      enabled: true
+    defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"

@@ -50,7 +50,7 @@ dependencies {
     implementation("io.micronaut:micronaut-management")
     implementation("io.micronaut:micronaut-http-server-netty")
     implementation("io.micronaut:micronaut-http-client")
-
+    runtimeOnly("io.micronaut:micronaut-discovery-client")
 
     runtimeOnly("ch.qos.logback:logback-classic:1.2.3")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.8")

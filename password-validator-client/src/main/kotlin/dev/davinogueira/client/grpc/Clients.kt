@@ -10,7 +10,7 @@ import javax.inject.Singleton
 class Clients {
 
     @Singleton
-    fun reactiveStub(@GrpcChannel("http://localhost:8081") channel : ManagedChannel):
+    fun reactiveStub(@GrpcChannel("password-validator-server") channel : ManagedChannel):
             PasswordValidatorGrpc.PasswordValidatorBlockingStub {
         return PasswordValidatorGrpc.newBlockingStub(channel)
     }

@@ -50,6 +50,7 @@ dependencies {
 
     runtimeOnly("ch.qos.logback:logback-classic:1.2.3")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.8")
+    runtimeOnly("io.micronaut:micronaut-discovery-client")
 
     kaptTest("io.micronaut:micronaut-inject-java")
 

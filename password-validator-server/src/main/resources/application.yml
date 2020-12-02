@@ -1,9 +1,15 @@
 micronaut:
   application:
-    name: passoword-validator-server
+    name: password-validator-server
+
+consul:
+  client:
+    registration:
+      enabled: true
+    defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
 
 grpc:
   server:
-    port: 8081
+    port: -1
     keep-alive-time: 3h
     max-inbound-message-size: 1024
