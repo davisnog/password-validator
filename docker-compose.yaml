@@ -1,0 +1,25 @@
+version: '3.3'
+services:
+  password-validator-client:
+    container_name: password-validator-client
+    build:
+      context: ./password-validator-client
+    ports:
+      - "8080:8080"
+    depends_on: 
+      - password-validator-server
+      
+  password-validator-server:
+    container_name: password-validator-server
+    build:
+      context: ./password-validator-server
+    ports:
+      - "8081:8081"
+  
+  consul:
+    image: consul
+    ports:
+      - 8500:8500
+
+      
+  

@@ -13,5 +13,5 @@ COPY --from=builder /home/app/build/layers/libs /home/app/libs
 COPY --from=builder /home/app/build/layers/resources /home/app/resources
 COPY --from=builder /home/app/build/layers/application.jar /home/app/application.jar
 
-EXPOSE 8081
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/home/app/application.jar"]
