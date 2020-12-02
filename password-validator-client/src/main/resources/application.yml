@@ -1,0 +1,8 @@
+micronaut:
+  application:
+    name: passoword-validator-client
+
+grpc:
+  client:
+    plaintext: true
+    max-retry-attempts: 10

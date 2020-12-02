@@ -1,0 +1,9 @@
+micronaut:
+  application:
+    name: passoword-validator-server
+
+grpc:
+  server:
+    port: 8081
+    keep-alive-time: 3h
+    max-inbound-message-size: 1024

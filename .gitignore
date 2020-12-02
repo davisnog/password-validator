@@ -81,14 +81,26 @@ gradle-app.setting
 
 # Cache of project
 .gradletasknamecache
-server/build
-client/build
-client/.gradle
-server/gradle
-client/gradle
-client/.apt_generated
-client/.apt_generated_tests
-server/.apt_generated
-server/.apt_generated_tests
-server/.settings
-client/.settings
+password-validator-client/.apt_generated
+password-validator-client/.apt_generated_tests
+password-validator-client/.settings
+password-validator-client/build/
+password-validator-client/gradle/
+password-validator-client/.gradle/
+password-validator-client/.project
+password-validator-client/.classpath
+password-validator-client/.factorypath
+password-validator-client/gradlew
+password-validator-client/gradlew.bat
+
+password-validator-server/.apt_generated
+password-validator-server/.apt_generated_tests
+password-validator-server/.settings
+password-validator-server/build/
+password-validator-server/gradle/
+password-validator-server/.gradle/
+password-validator-server/.project
+password-validator-server/.classpath
+password-validator-server/.factorypath
+password-validator-server/gradlew
+password-validator-server/gradlew.bat
