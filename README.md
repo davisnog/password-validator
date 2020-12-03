@@ -1,6 +1,4 @@
-# Objetivo da API
-
-## Essa API tem o objetivo de validar se uma senha atende um padrão mínimo de segurança
+# Essa API tem o objetivo de validar que uma senha atenda um padrão mínimo de segurança
 
 Para considerar que uma senha tenha valida foram considerados os seguintes pré-requisitos:
 
@@ -47,9 +45,9 @@ $ docker-compose up
 - [SDKMan](https://sdkman.io/install) (recomendado)
 - [Java](https://sdkman.io/jdks#AdoptOpenJDK) versão mínima 11
 - [Gradle](https://sdkman.io/sdks#gradle)
-- [Micronaul](https://sdkman.io/sdks#micronaut) (opcional)
+- [Micronaut](https://sdkman.io/sdks#micronaut) (opcional)
 
-### esse projeto foi dividido em dois projetos, o server é usa GRPC como protocolo de comunicação e o client é o client GRPC e API Web
+> esse projeto foi dividido em dois sub-projetos, o server usa GRPC como protocolo de comunicação e o client é uma API REST
 
 ```bash
 Ex.:
@@ -57,10 +55,10 @@ Ex.:
 # Clone o repositório
 $ git clone git@github.com:davinogueiradev/password-validator.git
 
-# acesse a root do projeto
+# acesse a pasta principal do projeto
 $ cd password-validator
 
-# o consul é uma dependencia do projeto e ele esta configurado no docker-compose
+# o consul é uma dependência do projeto e ele está configurado no docker-compose
 $ docker-compose up -d consul
 
 # Acesse a pasta do projeto server
@@ -98,20 +96,37 @@ curl --location --request POST 'http://localhost:8080/validate' \
 ```
 
 ## Principais tecnologias utilizadas:
- - Linguagem de programação de [Kotlin](https://kotlinlang.org/)
- - Framework [Micronaut](https://micronaut.io/) para Server [GRPC](https://grpc.io/) e Client Web
- - [Consul](https://www.consul.io/) para Service Discovery e Servoce Mesh
+ - Linguagem de programação [Kotlin](https://kotlinlang.org/)
+ - Framework [Micronaut](https://micronaut.io/) para Server [GRPC](https://grpc.io/) e API REST
+ - [Consul](https://www.consul.io/) para Service Discovery e Service Mesh
  - [Docker](https://docs.docker.com/get-docker/) como container para aplicação
  - [Docker Compose](https://docs.docker.com/compose/install/) para juntar todas as partes da aplicação e subir localmente
 
- ## Arquitetura do Client Web
+ ## Projeto password-validator-client
 
- Uma API REST utilizando Micronaut para expor um endpoint que recebe e responde JSON e criar um client para conectar ao server via GRPC.\
+ - Uma API REST utilizando Micronaut para expor um endpoint que recebe e responde JSON, a validação da senha é feita no Server se comunicando via GRPC onde esta toda a regra de negócio.
+ - Nele temos o teste de integração com o Server
 
 
- ## Arquitetura do Server
+ ## Projeto password-validator-server
 
- Uma aplicação que utiliza o Micronaut para criar um server com GRPC, onde esta toda a regra de negócio de validação da senha.
+ - Uma aplicação que utiliza o Micronaut para criar um server com GRPC, onde esta toda a regra de negócio de validação da senha.
+ - Para melhor organização e manutenção do código, o padrão de projeto Strategy foi utilizado para fazer as validações da Senha, onde é possível através da implementação da Interface ValidatorStrategy
+ 
+    ```kotlin
+    package dev.davinogueira.server.validators
+
+    interface ValidatorStrategy {
+        fun isValid(password : String) : Boolean
+    }
+    ```
+- Testes unitários foram escritos para garantir a qualidade
+
+### O porque de cada escolha.
+- Kotlin é uma linguagem que gosto bastante por se aproveitar bem do ecossistema Java, ter uma ótima IDE como o Intellij e uma sintaxe mais enxuta com bastante recursos legais
+- Micronaut, um framework já pensado para aplicações Cloud Native, com uma ótima documentação, bastante contribuidores para o projeto, fácil integração com GRPC, Data Access, entre outros e compila para GraalVM
+- GRPC, um padrão também pensado para aplicações Cloud Native, muito performático, excelente para comunicação entre serviços e baseado em HTTP/2.
+
 
 
 
