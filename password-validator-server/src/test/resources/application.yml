@@ -1,0 +1,14 @@
+micronaut:
+  application:
+    name: password-validator-server
+
+consul:
+  client:
+    registration:
+      enabled: false
+
+
+grpc:
+  server:
+    keep-alive-time: 3h
+    max-inbound-message-size: 1024
