@@ -1,6 +1,6 @@
 # Essa API tem o objetivo de validar que uma senha atenda um padrão mínimo de segurança
 
-Para considerar que uma senha tenha valida foram considerados os seguintes pré-requisitos:
+Para considerar que uma senha seja válida foram considerados os seguintes pré-requisitos:
 
 - Nove ou mais caracteres
 - Ao menos 1 dígito
@@ -12,13 +12,13 @@ Para considerar que uma senha tenha valida foram considerados os seguintes pré-
 - Espaços em branco não devem ser considerados como caracteres válidos
 
 
-Essa API recebe um POST com a senha e retorna um valor Boleano como resultado  
+>Essa API recebe um POST com a senha e retorna um valor Boleano como resultado  
 
 # Para subir o projeto localmente os seguintes passos são necessários:  
 
 ### Pré-requisitos
 
-Nesse momento precisamos do [Git](https://git-scm.com) e [Docker-compose](https://docs.docker.com/compose/install).
+Nesse momento precisamos do [Git](https://git-scm.com) e [docker-compose](https://docs.docker.com/compose/install).
 
 #### Rodando
 
@@ -110,8 +110,8 @@ curl --location --request POST 'http://localhost:8080/validate' \
 
  ## Projeto password-validator-server
 
- - Uma aplicação que utiliza o Micronaut para criar um server com GRPC, onde esta toda a regra de negócio de validação da senha.
- - Para melhor organização e manutenção do código, o padrão de projeto Strategy foi utilizado para fazer as validações da Senha, onde é possível através da implementação da Interface ValidatorStrategy
+ - Uma aplicação que utiliza o Micronaut para criar um server com GRPC, onde esta toda a regra de negócio da validação da senha.
+ - Para melhor organização e manutenção do código, o padrão de projeto Strategy foi utilizado para fazer as validações da Senha, onde é possível criar novos validadores através da implementação da Interface ValidatorStrategy
  
     ```kotlin
     package dev.davinogueira.server.validators
@@ -130,3 +130,4 @@ curl --location --request POST 'http://localhost:8080/validate' \
 
 
 
+TODO: clean code e desenho da Arquitetura
