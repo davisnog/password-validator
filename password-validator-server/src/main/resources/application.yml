@@ -10,6 +10,6 @@ consul:
 
 grpc:
   server:
-    port: -1
+    port: 8081
     keep-alive-time: 3h
     max-inbound-message-size: 1024
