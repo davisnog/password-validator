@@ -1,8 +1,8 @@
 package dev.davinogueira.server.validators.impl
 
-import dev.davinogueira.server.validators.Validator
+import dev.davinogueira.server.validators.ValidatorStrategy
 
-class RepeatedCharacterValidator : Validator {
+class RepeatedCharacterValidatorStrategy : ValidatorStrategy {
 
     override fun isValid(password: String): Boolean {
         val wordCount = password.groupingBy { it }.eachCount().maxOfOrNull { it.value }

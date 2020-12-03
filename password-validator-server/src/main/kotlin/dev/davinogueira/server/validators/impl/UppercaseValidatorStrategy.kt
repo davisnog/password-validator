@@ -1,12 +1,13 @@
 package dev.davinogueira.server.validators.impl
 
-import dev.davinogueira.server.validators.Validator
+import dev.davinogueira.server.validators.ValidatorStrategy
 import java.util.regex.Pattern
 
-class LowercaseValidator : Validator {
+class UppercaseValidatorStrategy : ValidatorStrategy {
     companion object {
-        val partner = Pattern.compile("[a-z]").toRegex()
+        private val partner = Pattern.compile("[A-Z]").toRegex()
     }
+
     override fun isValid(password: String): Boolean {
         return password.contains(partner)
     }

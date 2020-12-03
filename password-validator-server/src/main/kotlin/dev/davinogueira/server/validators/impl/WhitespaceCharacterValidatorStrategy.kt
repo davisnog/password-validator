@@ -1,9 +1,9 @@
 package dev.davinogueira.server.validators.impl
 
-import dev.davinogueira.server.validators.Validator
+import dev.davinogueira.server.validators.ValidatorStrategy
 import java.util.regex.Pattern
 
-class WhitespaceCharacterValidator : Validator {
+class WhitespaceCharacterValidatorStrategy : ValidatorStrategy {
     companion object {
         private val whitespacePattern = Pattern.compile("\\s").toRegex()
     }

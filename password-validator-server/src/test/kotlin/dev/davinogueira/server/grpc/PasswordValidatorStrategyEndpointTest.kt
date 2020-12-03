@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 import javax.inject.Inject
 
 @MicronautTest
-class PasswordValidatorEndpointTest {
+class PasswordValidatorStrategyEndpointTest {
 
     @Inject
     lateinit var blockingStub: PasswordValidatorGrpc.PasswordValidatorBlockingStub

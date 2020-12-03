@@ -1,9 +1,9 @@
 package dev.davinogueira.server.validators.impl
 
-import dev.davinogueira.server.validators.Validator
+import dev.davinogueira.server.validators.ValidatorStrategy
 import java.util.regex.Pattern
 
-class DigitValidator : Validator {
+class DigitValidatorStrategy : ValidatorStrategy {
     companion object {
         val partner = Pattern.compile("\\D").toRegex()
     }

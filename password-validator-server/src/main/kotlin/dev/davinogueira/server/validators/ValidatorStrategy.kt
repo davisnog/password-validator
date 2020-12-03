@@ -1,5 +1,5 @@
 package dev.davinogueira.server.validators
 
-interface Validator {
+interface ValidatorStrategy {
     fun isValid(password :String) : Boolean
 }

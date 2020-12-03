@@ -8,19 +8,18 @@ import io.micronaut.context.annotation.Prototype
 class ValidatorServiceImpl : ValidatorService {
 
     fun password() : Password {
-        return Password()
-            .addValidator(DigitValidator())
-            .addValidator(LengthValidator())
-            .addValidator(LowercaseValidator())
-            .addValidator(RepeatedCharacterValidator())
-            .addValidator(SpecialCharacterValidator())
-            .addValidator(UppercaseValidator())
-            .addValidator(WhitespaceCharacterValidator())
+        val validators = arrayOf(DigitValidatorStrategy(),
+            LengthValidatorStrategy(),
+            LowercaseValidatorStrategy(),
+            RepeatedCharacterValidatorStrategy(),
+            SpecialCharacterValidatorStrategy(),
+            UppercaseValidatorStrategy(),
+            WhitespaceCharacterValidatorStrategy())
 
+        return Password(validators)
     }
 
     override fun isValid(password: String): Boolean {
         return password().isValid(password)
     }
-
 }

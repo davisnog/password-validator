@@ -1,16 +1,7 @@
 package dev.davinogueira.server.validators
 
-class Password {
-    companion object {
-        private val validators = ArrayList<Validator>()
-    }
-
-    fun addValidator(validator: Validator) : Password {
-        validators.add(validator)
-        return this
-    }
-
-    private fun invalidPasswords(value: String) : List<Validator> {
+class Password (private val validators: Array<ValidatorStrategy>) {
+    private fun invalidPasswords(value: String) : List<ValidatorStrategy> {
         return validators.filterNot { it.isValid(value) }
     }
 

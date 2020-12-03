@@ -5,17 +5,17 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Assertions.assertFalse
 
 
-class LengthValidatorTest {
+class LengthValidatorStrategyTest {
 
     @Test
     fun `test with length is valid`(){
-        assertTrue(LengthValidator().isValid("123456789"))
+        assertTrue(LengthValidatorStrategy().isValid("123456789"))
     }
 
     @Test
     fun `test with length is invalid`(){
-        assertFalse(LengthValidator().isValid("12345678"))
-        assertFalse(LengthValidator().isValid("123"))
-        assertFalse(LengthValidator().isValid(""))
+        assertFalse(LengthValidatorStrategy().isValid("12345678"))
+        assertFalse(LengthValidatorStrategy().isValid("123"))
+        assertFalse(LengthValidatorStrategy().isValid(""))
     }
 }

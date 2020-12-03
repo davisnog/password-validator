@@ -1,9 +1,9 @@
 package dev.davinogueira.server.validators.impl
 
-import dev.davinogueira.server.validators.Validator
+import dev.davinogueira.server.validators.ValidatorStrategy
 import java.util.regex.Pattern
 
-class SpecialCharacterValidator : Validator {
+class SpecialCharacterValidatorStrategy : ValidatorStrategy {
     companion object {
         val partner = Pattern.compile("[!@#\$%^&*()\\-+]").toRegex()
     }

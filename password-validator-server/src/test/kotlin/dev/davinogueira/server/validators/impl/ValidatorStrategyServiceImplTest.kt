@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Assertions.assertFalse
 
-class ValidatorServiceImplTest {
+class ValidatorStrategyServiceImplTest {
 
     @Test
     fun `test password is invalid`(){
