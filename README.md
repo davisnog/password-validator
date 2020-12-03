@@ -1,4 +1,4 @@
-# Essa API tem o objetivo de validar que uma senha atenda um padrão mínimo de segurança
+## Essa Aplicação tem o objetivo de validar que uma senha atenda um padrão mínimo de segurança
 
 Para considerar que uma senha seja válida foram considerados os seguintes pré-requisitos:
 
@@ -14,7 +14,12 @@ Para considerar que uma senha seja válida foram considerados os seguintes pré-
 
 >Essa API recebe um POST com a senha e retorna um valor Boleano como resultado  
 
-# Para subir o projeto localmente os seguintes passos são necessários:  
+## Desenho de Arquitetura da Aplicação
+
+![arquitetura](https://github.com/davinogueiradev/password-validator/blob/main/img/password_validator.png?raw=true "Arquitetura macro")
+
+
+## Para subir o projeto localmente os seguintes passos são necessários:  
 
 ### Pré-requisitos
 
@@ -38,6 +43,18 @@ $ docker-compose build
 $ docker-compose up
 
 # Acesse a aplicação no endereço: http://localhost:8080
+```
+### Exemplo de cURL para chamar a API
+
+```bash
+Ex.:
+
+curl --location --request POST 'http://localhost:8080/validate' \
+--header 'content-type: application/json' \
+--data-raw '{
+    "password": "AbTp9!fok"
+}'
+
 ```
 
 ## Para o ambiente de desenvolvimento precisamos de mais ferramentas:
@@ -82,19 +99,6 @@ $ gradle run
 # Acesse a aplicação no endereço: http://localhost:8080
 ```
 
-### Exemplo de curl para chamar a API
-
-```bash
-Ex.:
-
-curl --location --request POST 'http://localhost:8080/validate' \
---header 'content-type: application/json' \
---data-raw '{
-    "password": "AbTp9!fok"
-}'
-
-```
-
 ## Principais tecnologias utilizadas:
  - Linguagem de programação [Kotlin](https://kotlinlang.org/)
  - Framework [Micronaut](https://micronaut.io/) para Server [GRPC](https://grpc.io/) e API REST
@@ -130,4 +134,5 @@ curl --location --request POST 'http://localhost:8080/validate' \
 
 
 
-TODO: clean code e desenho da Arquitetura
+
+TODO: clean code 
