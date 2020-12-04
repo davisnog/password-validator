@@ -2,7 +2,7 @@ micronaut:
   application:
     name: password-validator-client
   server: 
-    port: -1
+    port: 8080
 
 grpc:
   client:

@@ -5,7 +5,7 @@ import dev.davinogueira.server.grpc.PasswordValidatorRequest
 import io.micronaut.context.annotation.Prototype
 
 @Prototype
-class PasswordValidatorService(val client: PasswordValidatorGrpc.PasswordValidatorBlockingStub) {
+class PasswordValidatorService(private val client: PasswordValidatorGrpc.PasswordValidatorBlockingStub) {
 
     fun isValid(password: String) : Boolean {
         val request = PasswordValidatorRequest.newBuilder().setValue(password).build()
