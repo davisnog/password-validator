@@ -11,15 +11,12 @@ Para considerar que uma senha seja válida foram considerados os seguintes pré-
 - Não possuir caracteres repetidos dentro do conjunto
 - Espaços em branco não devem ser considerados como caracteres válidos
 
-
->Essa API recebe um POST com a senha e retorna um valor Boleano como resultado  
-
 ## Desenho de Arquitetura da Aplicação
 
 ![arquitetura](https://github.com/davinogueiradev/password-validator/blob/main/img/password_validator.png?raw=true "Arquitetura macro")
 
 
-## Para subir o projeto localmente os seguintes passos são necessários:  
+## Para subir a aplicação localmente os seguintes passos são necessários:  
 
 ### Pré-requisitos
 
@@ -64,7 +61,7 @@ curl --location --request POST 'http://localhost:8080/validate' \
 - [Gradle](https://sdkman.io/sdks#gradle)
 - [Micronaut](https://sdkman.io/sdks#micronaut) (opcional)
 
-> esse projeto foi dividido em dois sub-projetos, o server usa GRPC como protocolo de comunicação e o client é uma API REST
+> esse projeto foi dividido em dois microsserviços, o server usa GRPC como protocolo de comunicação e o client é uma API REST
 
 ```bash
 Ex.:
@@ -106,15 +103,15 @@ $ gradle run
  - [Docker](https://docs.docker.com/get-docker/) como container para aplicação
  - [Docker Compose](https://docs.docker.com/compose/install/) para juntar todas as partes da aplicação e subir localmente
 
- ## Projeto password-validator-client
+ ## Microsserviço password-validator-client
 
- - Uma API REST utilizando Micronaut para expor um endpoint que recebe e responde JSON, a validação da senha é feita no Server se comunicando via GRPC onde esta toda a regra de negócio.
+ - Uma API REST utilizando o framework Micronaut para expor um endpoint que recebe e responde JSON, a validação da senha é feita no Server se comunicando via GRPC onde esta toda a regra de negócio.
  - Nele temos o teste de integração com o Server
 
 
- ## Projeto password-validator-server
+ ## Microsserviço password-validator-server
 
- - Uma aplicação que utiliza o Micronaut para criar um server com GRPC, onde esta toda a regra de negócio da validação da senha.
+ - Uma aplicação que utiliza o framework Micronaut para criar um server com GRPC, onde esta toda a regra de negócio de validação da senha.
  - Para melhor organização e manutenção do código, o padrão de projeto Strategy foi utilizado para fazer as validações da Senha, onde é possível criar novos validadores através da implementação da Interface ValidatorStrategy
  
     ```kotlin
@@ -127,8 +124,8 @@ $ gradle run
 - Testes unitários foram escritos para garantir a qualidade
 
 ### O porque de cada escolha.
-- Kotlin é uma linguagem que gosto bastante por se aproveitar bem do ecossistema Java, ter uma ótima IDE como o Intellij e uma sintaxe mais enxuta com bastante recursos legais
-- Micronaut, um framework já pensado para aplicações Cloud Native, com uma ótima documentação, bastante contribuidores para o projeto, fácil integração com GRPC, Data Access, entre outros e compila para GraalVM
+- Kotlin é uma linguagem que gosto bastante por se aproveitar bem do ecossistema Java, ter o suporte de ótima IDE como o Intellij e uma sintaxe mais enxuta com bastante recursos legais
+- Micronaut, um framework já pensado para aplicações Cloud Native, com uma ótima documentação, uma comunidade bem ativa, fácil integração com GRPC, Data Access, entre outros e compila para GraalVM
 - GRPC, um padrão também pensado para aplicações Cloud Native, muito performático, excelente para comunicação entre serviços e baseado em HTTP/2.
 
 
