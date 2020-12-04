@@ -13,7 +13,7 @@ Para considerar que uma senha seja válida foram considerados os seguintes pré-
 
 ## Desenho de Arquitetura da Aplicação
 
-![arquitetura](https://github.com/davinogueiradev/password-validator/blob/main/img/password_validator.png?raw=true "Arquitetura macro")
+![arquitetura](https://github.com/davisnog/password-validator/blob/main/img/password_validator.png?raw=true "Arquitetura macro")
 
 
 ## Para subir a aplicação localmente os seguintes passos são necessários:  
