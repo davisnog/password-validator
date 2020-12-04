@@ -28,7 +28,7 @@ Nesse momento precisamos do [Git](https://git-scm.com) e [docker-compose](https:
 Ex.:
 
 # Clone o repositório
-$ git clone https://github.com/davinogueiradev/password-validator.git
+$ git clone https://github.com/davisnog/password-validator.git
 
 # Acesse a pasta do projeto
 $ cd password-validator
@@ -67,7 +67,7 @@ curl --location --request POST 'http://localhost:8080/validate' \
 Ex.:
 
 # Clone o repositório
-$ git clone git@github.com:davinogueiradev/password-validator.git
+$ git clone git@github.com:davisnog/password-validator.git
 
 # acesse a pasta principal do projeto
 $ cd password-validator
