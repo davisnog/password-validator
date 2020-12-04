@@ -5,10 +5,10 @@ import java.util.regex.Pattern
 
 class SpecialCharacterValidatorStrategy : ValidatorStrategy {
     companion object {
-        val partner = Pattern.compile("[!@#\$%^&*()\\-+]").toRegex()
+        private val symbolsValid = Pattern.compile("[!@#\$%^&*()\\-+]").toRegex()
     }
 
     override fun isValid(password: String): Boolean {
-        return password.contains(partner)
+        return password.contains(symbolsValid)
     }
 }

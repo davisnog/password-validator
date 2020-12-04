@@ -5,9 +5,9 @@ import java.util.regex.Pattern
 
 class LowercaseValidatorStrategy : ValidatorStrategy {
     companion object {
-        val partner = Pattern.compile("[a-z]").toRegex()
+        private val lowercase = Pattern.compile("[a-z]").toRegex()
     }
     override fun isValid(password: String): Boolean {
-        return password.contains(partner)
+        return password.contains(lowercase)
     }
 }

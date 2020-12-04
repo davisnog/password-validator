@@ -5,10 +5,10 @@ import java.util.regex.Pattern
 
 class UppercaseValidatorStrategy : ValidatorStrategy {
     companion object {
-        private val partner = Pattern.compile("[A-Z]").toRegex()
+        private val uppercase = Pattern.compile("[A-Z]").toRegex()
     }
 
     override fun isValid(password: String): Boolean {
-        return password.contains(partner)
+        return password.contains(uppercase)
     }
 }

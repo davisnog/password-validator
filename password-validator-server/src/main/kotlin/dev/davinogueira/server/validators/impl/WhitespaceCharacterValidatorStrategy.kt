@@ -5,10 +5,10 @@ import java.util.regex.Pattern
 
 class WhitespaceCharacterValidatorStrategy : ValidatorStrategy {
     companion object {
-        private val whitespacePattern = Pattern.compile("\\s").toRegex()
+        private val whitespace = Pattern.compile("\\s").toRegex()
     }
 
     override fun isValid(password: String): Boolean {
-        return !password.contains(whitespacePattern)
+        return !password.contains(whitespace)
     }
 }

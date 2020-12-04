@@ -5,10 +5,9 @@ import java.util.regex.Pattern
 
 class DigitValidatorStrategy : ValidatorStrategy {
     companion object {
-        val partner = Pattern.compile("\\D").toRegex()
+        private val numbers = Pattern.compile("\\d").toRegex()
     }
     override fun isValid(password: String): Boolean {
-        val digits = password.replace(partner, "")
-        return digits.isNotEmpty()
+        return password.contains(numbers)
     }
 }
