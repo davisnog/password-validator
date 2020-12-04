@@ -1,4 +1,4 @@
-## Essa Aplicação tem o objetivo de validar que uma senha atenda um padrão mínimo de segurança
+## Essa aplicação tem o objetivo de validar que uma senha atenda um padrão mínimo de segurança
 
 Para considerar que uma senha seja válida foram considerados os seguintes pré-requisitos:
 
@@ -28,7 +28,7 @@ Nesse momento precisamos do [Git](https://git-scm.com) e [docker-compose](https:
 Ex.:
 
 # Clone o repositório
-$ git clone https://github.com/davisnog/password-validator.git
+$ git clone git@github.com:davisnog/password-validator.git
 
 # Acesse a pasta do projeto
 $ cd password-validator
@@ -128,8 +128,3 @@ $ gradle run
 - Micronaut, um framework já pensado para aplicações Cloud Native, com uma ótima documentação, uma comunidade bem ativa, fácil integração com GRPC, Data Access, entre outros e compila para GraalVM
 - GRPC, um padrão também pensado para aplicações Cloud Native, muito performático, excelente para comunicação entre serviços e baseado em HTTP/2.
 
-
-
-
-
-TODO: clean code 
